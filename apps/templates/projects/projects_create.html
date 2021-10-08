@@ -1,0 +1,27 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+{% block content %}
+ 
+<form action= '.' method='POST'>{% csrf_token %} 
+	{{ form.as_p }}
+	<input type='submit' value='Save' />
+</form>
+</body>
+
+{% endblock %}
+
+
+<!-- 
+a simple google search form added to an page
+<form action= 'http://www.google.co.za/search' method='GET'> 
+	<input type='text' name='q' placeholder = "Google Search" />
+	<input type='submit' value='Search' />
+</form> -->
+
+
+<!-- fast and easy of adding a form to n app (method 1) -->
+<!-- <form method='POST'> {% csrf_token %}
+{{ form.as_p }}
+<input type='submit' value='Save' />
+</form> -->
+

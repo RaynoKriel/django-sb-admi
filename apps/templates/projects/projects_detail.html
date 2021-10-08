@@ -1,0 +1,17 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+{% block content %}
+ 
+<!-- <div style="background-image: linear-gradient(to right, rgba(253, 253, 253, 0.664),rgba(253, 253, 253, 0.473),transparent,transparent,transparent,transparent,transparent,transparent,transparent,transparent); text-align:left; vertical-align: middle; padding:5px 20px;">  -->
+<div>
+    <h1> Project Details</h1>
+        <h1>{{ object.project }}</h1>
+        <p>{{ object.description }}</p>
+        <p>{{ object.created }}</p>
+        <p>{{ object.modified }}</p>
+        <p>{{ object.user }}</p>
+        <p>{{ object.status }}</p>
+        <p><a href='delete/'>Delete</a> "-or-" <a href='update/'>Update</a></p>
+</div>
+
+{% endblock %}

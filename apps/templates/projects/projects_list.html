@@ -1,0 +1,13 @@
+{% extends "layouts/base.html" %}
+
+{% block content %}
+{% load static %}
+ 
+{% for instance in object_list %}
+	<!-- <div style="background-image: linear-gradient(to right, rgba(253, 253, 253, 0.664),rgba(253, 253, 253, 0.473),transparent,transparent,transparent,transparent,transparent,transparent,transparent,transparent); text-align:left; vertical-align: middle; padding:5px 10px;"> -->
+		<p>{{ instance.id }} - <a href='{{ instance.get_absolute_url }}'>{{ instance.name}} - {{ instance.ign }}</a></p>
+	<!-- </div> -->
+
+{% endfor %}
+
+{% endblock %}
