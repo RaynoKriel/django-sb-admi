@@ -1,0 +1,15 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+{% block content %}
+
+
+<h1>In App : {{ object.project }}</h1>
+    <p>{{ object.description }}</p>
+    <p>{{ object.created }}</p>
+    <p>{{ object.modified }}</p>
+    <p>{{ object.user }}</p>
+    <p>{{ object.status }}</p>
+
+{% endblock %}
+
+<!-- <p>{% if object.description != None and object.description != '' %}{{ object.description }}{% else %}Unsubmitted{% endif %}</p> -->

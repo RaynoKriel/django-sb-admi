@@ -14,4 +14,5 @@ urlpatterns = [
     path('<int:id>/', views.dynamic_lookup_view, name='project-detail'),
     path('<int:id>/update/', views.projects_update_view, name='project-update'),
     path('<int:id>/delete/', views.projects_delete_view, name='project-delete'),
+    
 ]

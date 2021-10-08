@@ -3,12 +3,17 @@ from django.shortcuts import render, get_object_or_404, redirect
 from .forms import ProjectForm
 from .models import projects
 from django.contrib.auth.decorators import login_required
+from django import template
+from django.contrib.auth.decorators import login_required
+from django.http import HttpResponse, HttpResponseRedirect
+from django.template import loader
+from django.urls import reverse
 
 # Create your views here.
 
 
-# method 1 (projects_create_view) fast and easy way to add a form to the app
-#
+#method 1 (projects_create_view) fast and easy way to add a form to the app
+
 @login_required(login_url='/accounts/login/')
 def projects_create_view(request):
 	form = ProjectForm(request.POST or None)
@@ -18,6 +23,8 @@ def projects_create_view(request):
 	context = {
             'form': form
 	}
+	# html_template = loader.get_template('projects/projects_create.html')
+	# return HttpResponse(html_template.render(context, request))
 	return render(request, "projects/projects_create.html", context)
 
 
@@ -87,3 +94,4 @@ def dynamic_lookup_view(request, id):
 		"object": obj
 	}
 	return render(request, "projects/projects_detail.html", context)
+

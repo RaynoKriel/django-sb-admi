@@ -1,0 +1,93 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Create {% endblock %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+<div class="container">
+	<div class="row justify-content-center">
+		<div class="col-lg-5">
+			<div class="card shadow-lg border-0 rounded-lg mt-5">
+				<div class="card-header text-center">
+					<h3 class="text-center font-weight-light my-4">Create Project</h3>
+					<span class="text-center">
+						{% if msg %}
+						{{ msg | safe }}
+						{% else %}
+						
+						{% endif %}
+					</span>
+				</div>
+				<div class="card-body">
+
+					<form role="form" method="post" action="">
+
+						{% csrf_token %}
+
+						<div class="form-group">
+							<label class="small mb-1" for="project">Project</label>
+							{{ form.project }}
+						</div>
+						<div class="form-group">
+							<label class="small mb-1" for="description">Description</label>
+							{{ form.description }}
+						</div>
+						<div class="form-group">
+							<label class="small mb-1" for="created ">Created</label>
+							{{ form.created }}
+						</div>
+						<div class="form-group">
+							<label class="small mb-1" for="modified">Modified</label>
+							{{ form.modified }}
+						</div>
+						<div class="form-group">
+							<label class="small mb-1" for="user ">User</label>
+							{{ form.user }}
+						</div>
+						<div class="form-group">
+							<label class="small mb-1" for="status">Status</label>
+							{{ form.status }}
+						</div>
+						<div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">
+							<button type="submit" value="save" class="btn btn-primary">Save</button>
+							
+						</div>
+					</form>
+				</div>
+				<div class="card-footer text-center">
+					<div class="small">
+						IT Projects & Message boards (Template Credit: Django SB Admin)
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+
+<script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
+<script src="/static/assets/js/datatables-simple-demo.js"></script>
+
+{% endblock javascripts %}
+
+<!-- 
+a simple google search form added to an page
+<form action= 'http://www.google.co.za/search' method='GET'> 
+	<input type='text' name='q' placeholder = "Google Search" />
+	<input type='submit' value='Search' />
+</form> -->
+
+
+<!-- fast and easy of adding a form to n app (method 1) -->
+<!-- <form method='POST'> {% csrf_token %}
+{{ form.as_p }}
+<input type='submit' value='Save' />
+</form> -->
+

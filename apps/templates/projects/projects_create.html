@@ -1,15 +1,27 @@
 {% extends "layouts/base.html" %}
-{% load static %}
+
+{% block title %} Tables {% endblock %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
 {% block content %}
- 
-<form action= '.' method='POST'>{% csrf_token %} 
+
+<form action='.' method='POST'>{% csrf_token %}
 	{{ form.as_p }}
 	<input type='submit' value='Save' />
 </form>
 </body>
 
-{% endblock %}
+{% endblock content %}
 
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+
+<script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
+<script src="/static/assets/js/datatables-simple-demo.js"></script>
+
+{% endblock javascripts %}
 
 <!-- 
 a simple google search form added to an page
