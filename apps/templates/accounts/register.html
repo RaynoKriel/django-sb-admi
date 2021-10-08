@@ -7,7 +7,10 @@
 
 {% block content %}
 
-    <main>
+    <main id='bglogo1' style="background-image: url('/static/assets/img/lewis1.png');">
+        <body id='bglogo2' style="background-image: url('/static/assets/img/striplogo.png');"></body>
+        <link href="/static/assets/css/styles.css" rel="stylesheet" />
+        
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-5">
@@ -18,7 +21,7 @@
                                 {% if msg %}
                                     {{ msg | safe }}
                                 {% else %}
-                                    Add your credentials
+                                    Please complete Registration form
                                 {% endif %} 
                             </span>                            
                         </div>
@@ -39,7 +42,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="small mb-1" for="inputEmailAddress">Email</label>
+                                    <label class="small mb-1" for="inputEmailAddress">Email - Optional for Password Recovery</label>
                                     {{ form.email }}
                                 </div>
                                 <span class="text-error">{{ form.email.errors }}</span>
@@ -59,7 +62,8 @@
                                 <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">
                                     <button type="submit" name="register" class="btn btn-primary">Register</button>
                                     <div class="small">
-                                        <a href="{% url 'login' %}">Login</a></div>
+                                        <label class="small mb-1" for="Login">Allready Registered? - </label>
+                                        <a href="{% url 'login' %}">Login Here</a></div>
                                 </div>
 
                             </form>
@@ -67,7 +71,7 @@
                         </div>
                         <div class="card-footer text-center">
                             <div class="small">
-                                Django SB Admin - Open-source Seed Project
+                                IT Projects & Message boards (Template Credit: Django SB Admin)
                             </div>
                         </div>
                     </div>

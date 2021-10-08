@@ -6,21 +6,21 @@
 {% block stylesheets %}{% endblock stylesheets %}
 
 {% block content %}
-
-    <main>
+{% load static %}
+    <main id='bglogo1' style="background-image: url('/static/assets/img/lewis1.png');">
+        <body id='bglogo2' style="background-image: url('/static/assets/img/striplogo.png');"></body>
+        <link href="/static/assets/css/styles.css" rel="stylesheet" />
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-5">
                     <div class="card shadow-lg border-0 rounded-lg mt-5">
                         <div class="card-header text-center">
-                            <h3 class="text-center font-weight-light my-4">
-                                Login
-                            </h3>
+                            <h3 class="text-center font-weight-light my-4">Login</h3>
                             <span class="text-center">
                                 {% if msg %}
                                     {{ msg | safe }}
                                 {% else %}
-                                    Add your credentials
+                                    Please Login or Register 
                                 {% endif %} 
                             </span>                            
                         </div>
@@ -47,13 +47,14 @@
                                 <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">
                                     <button type="submit" name="login" class="btn btn-primary">Login</button>
                                     <div class="small">
-                                        <a href="{% url 'register' %}">Register</a></div>
+                                        <label class="small mb-1" for="Register">New to the boards? - </label>
+                                        <a href="{% url 'register' %}">Register Here</a></div>
                                 </div>
                             </form>
                         </div>
                         <div class="card-footer text-center">
                             <div class="small">
-                                Django SB Admin - Open-source Seed Project
+                                IT Projects & Message boards (Template Credit: Django SB Admin)
                             </div>
                         </div>
                     </div>

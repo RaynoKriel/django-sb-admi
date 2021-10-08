@@ -39,6 +39,21 @@
   :root {
     scroll-behavior: smooth; } }
 
+#bglogo1{
+  background-repeat: no-repeat;
+  background-size: 200px 200px;
+  background-position-x: left;
+  background-position-y: top;
+  background-attachment:fixed;
+}
+#bglogo2{
+  background-repeat: no-repeat;
+  background-size: 700px 70px;
+  background-position-x: center;
+  background-position-y:89%;
+  background-attachment: fixed;
+}
+
 body {
   margin: 0;
   font-family: var(--bs-font-sans-serif);
